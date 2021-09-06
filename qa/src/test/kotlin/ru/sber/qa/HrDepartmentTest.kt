@@ -23,7 +23,7 @@ internal class HrDepartmentTest {
         val clockFixed = Clock.fixed(Instant.parse("2021-09-06T10:00:00Z"), ZoneOffset.UTC)
         HrDepartment.clock = clockFixed
         mockkObject(CertificateType.NDFL)
-//        mockkObject(CertificateType.LABOUR_BOOK)
+        mockkObject(CertificateType.LABOUR_BOOK)
     }
 
     @AfterEach
