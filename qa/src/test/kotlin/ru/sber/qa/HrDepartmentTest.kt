@@ -11,9 +11,7 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 import java.time.Clock
 import java.time.Instant
-import java.time.ZoneId
 import java.time.ZoneOffset
-import java.util.*
 
 internal class HrDepartmentTest {
     private var certificateRequest = mockk<CertificateRequest>()
