@@ -15,13 +15,6 @@ internal class CertificateTest {
     private val data = Random.nextBytes(100)
     private val certificate = Certificate(certificateRequest, processedBy, data)
 
-
-
-    @AfterEach
-    fun tearDown() {
-        unmockkAll()
-    }
-
     @Test
     fun getCertificateRequest() {
         assertEquals(certificateRequest, certificate.certificateRequest)

@@ -12,18 +12,10 @@ import kotlin.random.Random
 
 internal class ScannerTest {
 
-    @BeforeEach
-    fun setUp() {
-        mockkObject(Random)
-    }
-
-    @AfterEach
-    fun tearDown() {
-        unmockkAll()
-    }
-
     @Test
     fun getScanData() {
+        mockkObject(Random)
+
         // given
         val data = Random.nextBytes(100)
 
@@ -34,14 +26,20 @@ internal class ScannerTest {
         // then
         assertDoesNotThrow { Scanner.getScanData() }
         assertEquals(data, Scanner.getScanData())
+
+        unmockkAll()
     }
 
     @Test
     fun throwScanTimeoutException() {
+        mockkObject(Random)
+
         // when
         every { Random.nextLong(5000L, 15000L) } returns 10_001L
 
         // then
         assertThrows(ScanTimeoutException::class.java) { Scanner.getScanData() }
+
+        unmockkAll()
     }
 }
