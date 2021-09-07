@@ -53,7 +53,7 @@ internal class HrDepartmentTest {
         // given
         var certificate = mockk<Certificate>()
         var hrEmployeeNumber = 10L
-        val outcomeOutcome: LinkedList<Certificate> = LinkedList()
+        //val outcomeOutcome: LinkedList<Certificate> = LinkedList()
 
         // when
         every { certificateRequest.process(hrEmployeeNumber)} returns certificate
