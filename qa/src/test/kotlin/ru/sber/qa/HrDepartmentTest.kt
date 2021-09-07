@@ -57,7 +57,7 @@ internal class HrDepartmentTest {
 
         // when
         every { certificateRequest.process(hrEmployeeNumber)} returns certificate
-        HrDepartment.receiveRequest(certificateRequest)
+        //HrDepartment.receiveRequest(certificateRequest)
 
         // then
         // В идеале, здесь бы проверить соответствие outcomeOutcome. Но outcomeOutcome
