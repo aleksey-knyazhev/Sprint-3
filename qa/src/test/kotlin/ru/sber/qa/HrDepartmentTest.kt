@@ -12,6 +12,7 @@ import org.junit.jupiter.api.Assertions.*
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneOffset
+import java.util.*
 
 internal class HrDepartmentTest {
     private var certificateRequest = mockk<CertificateRequest>()
@@ -49,17 +50,17 @@ internal class HrDepartmentTest {
 
     @Test
     fun processNextRequest() {
-//        // given
-//        val incomeBox: LinkedList<CertificateRequest> = LinkedList()
-//        val outcomeOutcome: LinkedList<Certificate> = LinkedList()
-//        var certificate = mockk<Certificate>()
-//        var hrEmployeeNumber = 10L
-//
-//        // when
-//        every { certificateRequest.process(hrEmployeeNumber)} returns certificate
-//
-//        // then
-//        assertEquals(outcomeOutcome, HrDepartment.outcomeOutcome)
-        // Ничего не получилось:  outcomeOutcome у HrDepartment - с модификатором private
+        // given
+        var certificate = mockk<Certificate>()
+        var hrEmployeeNumber = 10L
+        val outcomeOutcome: LinkedList<Certificate> = LinkedList()
+
+        // when
+        every { certificateRequest.process(hrEmployeeNumber)} returns certificate
+        HrDepartment.receiveRequest(certificateRequest)
+
+        // then
+        // В идеале, здесь бы проверить соответствие outcomeOutcome. Но outcomeOutcome
+        //assertEquals(outcomeOutcome, HrDepartment.outcomeOutcome). Но свойство private - с модификатором private, добраться не получится
     }
 }
