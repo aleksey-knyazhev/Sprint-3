@@ -2,11 +2,12 @@ package ru.sber.oop
 
 open class Room(val name: String, val size: Int) {
     constructor(name: String): this(name, 100)
+    val monster: Monster = Goblin("soulAche", 42, name, "mom's girl friend's son")
 
     protected open val dangerLevel = 5
 
     fun description() = "Room: $name"
-    open fun load() = "Nothing much to see here..."
+    open fun load() = monster.getSalutation()
 }
 
 class TownSquare(): Room("Town Square", 1000) {
